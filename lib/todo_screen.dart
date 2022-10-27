@@ -16,6 +16,10 @@ class _TodoScreenState extends State<TodoScreen> {
         body: TextField(
           key: Key('todoInputBox'),
         ),
+        floatingActionButton: FloatingActionButton(
+          key: Key('addTaskButton'),
+          onPressed: null,
+        ),
       );
     });
   }
