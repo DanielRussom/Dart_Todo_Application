@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_todo/home_page.dart';
 import 'package:simple_todo/todo_screen.dart';
+import 'package:simple_todo/todo_screen_view_model.dart';
 
 void main() {
   runApp(const MyApp());

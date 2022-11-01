@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_todo/todo_screen.dart';
-import 'package:simple_todo/todo_task.dart';
+import 'package:simple_todo/todo_screen_view_model.dart';
+import 'package:simple_todo/todo_task_card.dart';
 
 void main() {
   group('Todo app should', () {
@@ -30,10 +31,10 @@ void main() {
       await tester.tap(find.byKey(const Key('addTaskButton')));
       await tester.pump();
       // See task is saved + displayed on screen
-      final todoTaskFinder = find.byType(TodoTask);
+      final todoTaskFinder = find.byType(TodoTaskCard);
       expect(todoTaskFinder, findsOneWidget);
       
-      final todoTaskWidget = tester.widget<TodoTask>(todoTaskFinder.first);
+      final todoTaskWidget = tester.widget<TodoTaskCard>(todoTaskFinder.first);
       expect(todoTaskWidget.title, equals(input));
 
       expect(find.text(input), findsOneWidget);
